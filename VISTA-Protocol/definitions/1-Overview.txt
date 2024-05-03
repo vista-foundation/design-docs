@@ -8,7 +8,7 @@ flowchart LR;
     subgraph Chain2[Chain #2]
         direction LR
         Mirror_Contract_1[Contract \n Mirror of Chain #1];
-        Contract_2[Contract #2];
+        Contract_2[Observed \n Contract 2];
     end
     subgraph Chain1[Chain #1]
         direction RL
