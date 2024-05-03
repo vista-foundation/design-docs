@@ -1,6 +1,6 @@
 # VISTA Protocol Design Documentation
 
-Detailed documentation outlining the vision for the VISTA protocol design and architecture, and laying the groundwork for the development roadmap.
+Detailed documentation outlining the vision for the VISTA protocol design and architecture and laying the groundwork for the development roadmap.
 
 ## Modules
 1. [Cardano Indexer](#cardano-indexer)
