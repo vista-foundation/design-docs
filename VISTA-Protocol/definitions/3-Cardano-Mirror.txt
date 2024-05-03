@@ -3,8 +3,11 @@ sequenceDiagram
     participant Mirror
     participant Chain2 as Chain #35;2 
 
-    Relayer ->> Mirror: Receive a message payload
-    Mirror ->> Chain2: Create transactions on a Cardano Blockchain
+    Relayer ->> Mirror: Receive event messages <br /> representing Chain 1 state
+    loop Build Tx
+        Mirror ->> Mirror: Build transactions <br /> from messages
+    end
+    Mirror ->> Chain2: Submit transactions <br /> to a Cardano Blockchain
 
 %%{
   init: {

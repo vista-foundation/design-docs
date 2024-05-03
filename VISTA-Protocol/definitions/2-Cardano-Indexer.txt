@@ -9,10 +9,10 @@ sequenceDiagram
     end
 
     loop Index New UTxOs
-        Indexer ->> Indexer: Update Data Structure
+        Indexer ->> Indexer: Add New UTxOs <br /> to Data Structure
     end
 
-    Indexer ->> Relayer: Send message to Relayer
+    Indexer ->> Relayer: Send message representing <br /> Chain 1 state to Relayer
 
 
 %%{

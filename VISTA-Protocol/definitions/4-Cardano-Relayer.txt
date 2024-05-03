@@ -3,11 +3,14 @@ sequenceDiagram
     participant Relayer
     participant Mirror
 
-    Indexer ->> Relayer: Receive event messages 
-    loop Translate
-        Relayer ->> Relayer: Translate event messages
+    Indexer ->> Relayer: Receive event messages <br /> representing Chain 1 state
+    loop Validation
+        Relayer ->> Relayer: Validate messages <br /> match trusted nodes state
     end
-    Relayer ->> Mirror: Convey event messages to Mirrors
+    loop Translate
+        Relayer ->> Relayer: Create a new <br /> event message <br /> for Mirror
+    end
+    Relayer ->> Mirror: Convey translated <br /> event messages to Mirrors
 
 %%{
   init: {
