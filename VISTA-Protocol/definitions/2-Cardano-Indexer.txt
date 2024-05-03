@@ -1,0 +1,29 @@
+sequenceDiagram
+    participant Chain1
+    participant Indexer
+    participant Relayer
+
+    loop Poll Chain State
+        Indexer --) Chain1: Detect unobserved locked UTxOs
+        Chain1 --x Indexer: New UTxOs
+    end
+
+    loop Index New UTxOs
+        Indexer ->> Indexer: Update Data Structure
+    end
+
+    Indexer ->> Relayer: Send message to Relayer
+
+
+%%{
+  init: {
+    'theme': 'default',
+    'themeVariables': {
+    }
+  }
+}%%
+%%{
+  init:{
+    'themeCSS':'g:nth-of-type(2) rect.actor, g:nth-of-type(5) rect.actor { stroke:#39f;fill: #cde498; };'
+  }
+}%%

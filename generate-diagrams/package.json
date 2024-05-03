@@ -1,0 +1,20 @@
+{
+    "name": "propul-docs",
+    "version": "1.0.0",
+    "description": "create propul docs",
+    "type": "module",
+    "scripts": {
+        "generate:diagrams": ". ./generate_diagrams.sh",
+        "watch:diagrams": "nodemon --watch ../VISTA-Protocol/definitions --ext txt --exec \"npm run generate:diagrams\""
+    },
+    "author": "",
+    "license": "Private",
+    "devDependencies": {
+        "@types/d3": "^7.4.3",
+        "@types/dompurify": "^3.0.5",
+        "@types/node": "^20.12.7",
+        "mermaid": "^10.9.0",
+        "nodemon": "^3.1.0",
+        "typescript": "^5.4.5"
+    }
+}

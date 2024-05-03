@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant Indexer
+    participant Relayer
+    participant Mirror
+
+    Indexer ->> Relayer: Receive event messages 
+    loop Translate
+        Relayer ->> Relayer: Translate event messages
+    end
+    Relayer ->> Mirror: Convey event messages to Mirrors
+
+%%{
+  init: {
+    'theme': 'default',
+    'themeVariables': {
+    }
+  }
+}%%
+%%{
+  init:{
+    'themeCSS':'g:nth-of-type(2) rect.actor, g:nth-of-type(5) rect.actor { stroke:#39f;fill: #cde498; };'
+  }
+}%%

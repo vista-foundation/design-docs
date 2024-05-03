@@ -1,0 +1,20 @@
+flowchart LR;
+    subgraph VISTA[VISTA Protocol Layer]
+        direction LR
+        Indexer_1[Indexer];
+        Indexer_1-->Relayer_1[Relayer];
+        Relayer_1-->Mirror_1[Chain \n Mirror];
+    end
+    subgraph Chain2[Chain #2]
+        direction LR
+        Mirror_Contract_1[Contract \n Mirror of Chain #1];
+        Contract_2[Contract #2];
+    end
+    subgraph Chain1[Chain #1]
+        direction RL
+        Contract_1[Observed \n Contract 1];
+        Mirror_Contract_2[Contract \n Mirror of Chain #2];
+    end
+    Indexer_1 --o Contract_1;
+    Contract_1 --> Indexer_1;
+    Mirror_1 --> Mirror_Contract_1;
